@@ -1,4 +1,11 @@
 import Image from "next/image";
+import { SITE_METADATA } from "../constants/site";
+
+export const metadata = {
+  ...SITE_METADATA,
+  title: "Home — Create Next App",
+  description: "Welcome to the sample Next.js app home page.",
+};
 
 export default function Home() {
   return (

@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    // Biome 用の VS Code 拡張を推奨します。拡張ID は market place 上のものを確認してインストールしてください。
+    "biomejs.biome"
+  ]
+}

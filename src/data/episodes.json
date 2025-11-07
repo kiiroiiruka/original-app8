@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "personal-portfolio-v1",
+    "title": "Personal Portfolio v1",
+    "date": "2024年06月",
+    "summary": "初期バージョンの個人ポートフォリオ。Next.js と Tailwind を使用。",
+    "content": "このプロジェクトは、個人のスキルと作品をまとめるために作成したポートフォリオサイトです。Next.js の app router を使い、サーバーコンポーネントとクライアントコンポーネントを適切に分離しました。主な学びはパフォーマンス最適化とアクセシビリティの改善でした。\n\n技術: Next.js, Tailwind CSS, TypeScript\n役割: フロントエンド実装・デザイン",
+    "images": ["/next.svg"]
+  },
+  {
+    "slug": "hackathon-project",
+    "title": "Hackathon Project",
+    "date": "2023年11月",
+    "summary": "チームで参加したハッカソンのプロジェクト。フロント実装を担当。",
+    "content": "ハッカソンで短期間にサービスのプロトタイプを作成しました。アイデア出しから実装、デモまでを経験し、チームでの開発とデプロイの実務感を得ました。",
+    "images": ["/vercel.svg"]
+  },
+  {
+    "slug": "highschool-festival",
+    "title": "高校文化祭Webサイト",
+    "date": "2020年09月",
+    "summary": "文化祭用の案内サイトを制作。HTML/CSS/JS で実装。",
+    "content": "高校の文化祭向けのサイトを作成し、運営側と連携して情報発信を行いました。現場での要件定義と実装の経験が得られました。",
+    "images": []
+  },
+  {
+    "slug": "cli-tool",
+    "title": "CLI Tool (utility)",
+    "date": "2018年08月",
+    "summary": "開発プロセスを改善するために作ったコマンドラインツール。",
+    "content": "個人で使うための小さな CLI ツールを作成し、ユーティリティスクリプトや自動化を通じて生産性を上げました。",
+    "images": []
+  }
+]

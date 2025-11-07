@@ -1,0 +1,25 @@
+{
+  // 保存時に自動でフォーマットを実行
+  "editor.formatOnSave": true,
+
+  // 保存時に利用可能な自動修正（source.fixAll）を実行する
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+
+  // もし Biome の VS Code 拡張をインストールしている場合はデフォルトフォーマッタに設定すると
+  // Biome がエディタのフォーマットとして使われます。拡張が未インストールでもこの設定は無害です。
+  "editor.defaultFormatter": "biomejs.biome",
+
+  // ファイル固有の上書き例（必要なら追加）
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
+}
