@@ -4,8 +4,8 @@
 
   // 保存時に利用可能な自動修正（source.fixAll）を実行する
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
 
   // もし Biome の VS Code 拡張をインストールしている場合はデフォルトフォーマッタに設定すると

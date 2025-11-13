@@ -7,10 +7,12 @@ export type Page = {
 };
 
 export const PAGES: Page[] = [
-  { id: "achievements", title: "今までの実績", href: "/achievements" },
-  { id: "university", title: "大学時代でのエピソード", href: "/university" },
-  { id: "highschool", title: "高校時代でのエピソード", href: "/highschool" },
-  { id: "tools", title: "このサイトに使用したツール", href: "/tools" },
+  { id: "journey", title: "現代までの歩み", href: "/journey" },
+  { id: "game", title: "ゲーム公開で得た経験", href: "/game" },
+  { id: "music", title: "音楽制作による制作物", href: "/music" },
+  { id: "hackathon", title: "ハッカソンで得た経験", href: "/hackathon" },
+  { id: "internship", title: "インターンで得た経験", href: "/internship" },
+  { id: "challenges", title: "その他、挑戦や失敗経験", href: "/challenges" },
 ];
 
 export const SITE_METADATA: Metadata = {

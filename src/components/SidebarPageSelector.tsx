@@ -1,7 +1,7 @@
 "use client";
+import Link from "next/link";
 //サイドバーのページセレクター
 import { useEffect, useState } from "react";
-import Link from "next/link";
 
 type Page = {
   id: string;
@@ -12,23 +12,47 @@ type Page = {
 const STORAGE_KEY = "sidebar.visiblePages";
 
 export default function SidebarPageSelector({ pages }: { pages: Page[] }) {
-  const [visibleIds, setVisibleIds] = useState<string[]>(() =>
-    typeof window === "undefined"
-      ? pages.map((p) => p.id)
-      : JSON.parse(localStorage.getItem(STORAGE_KEY) || "null") ?? pages.map((p) => p.id)
+  const [visibleIds, setVisibleIds] = useState<string[]>(
+    pages.map((p) => p.id),
   );
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(visibleIds));
+      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+      // pages のIDリストと stored が一致するかチェック
+      const pageIds = pages.map((p) => p.id);
+      if (
+        stored &&
+        Array.isArray(stored) &&
+        stored.length === pageIds.length &&
+        stored.every((id: string) => pageIds.includes(id))
+      ) {
+        setVisibleIds(stored);
+      } else {
+        // 古いデータの場合はリセット
+        localStorage.removeItem(STORAGE_KEY);
+        setVisibleIds(pageIds);
+      }
     } catch {
       // ignore localStorage errors (e.g., private mode)
     }
-  }, [visibleIds]);
+  }, [pages]);
+
+  useEffect(() => {
+    if (mounted) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(visibleIds));
+      } catch {
+        // ignore localStorage errors (e.g., private mode)
+      }
+    }
+  }, [visibleIds, mounted]);
 
   const toggle = (id: string) => {
     setVisibleIds((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
     );
   };
 
@@ -50,8 +74,6 @@ export default function SidebarPageSelector({ pages }: { pages: Page[] }) {
             ))}
         </ul>
       </nav>
-
-     
     </aside>
   );
 }

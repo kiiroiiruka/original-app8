@@ -45,9 +45,6 @@ export const ACHIEVEMENTS: TimelineEntry[] = [
     id: "entrance-highschool",
     title: "新座総合技術高等学校 入学",
     date: "2020-04",
-    description:
-      "埼玉県立新座総合技術高等学校に入学。情報技術科で専門的な学びをスタート。",
-    period: "highschool",
   },
   {
     id: "a4",
@@ -60,9 +57,7 @@ export const ACHIEVEMENTS: TimelineEntry[] = [
   },
   {
     id: "entrance-junior",
-    title: "○○中学校 入学",
+    title: "土合中学校 入学",
     date: "2012-04",
-    description: "○○中学校に入学。基礎的な学びと活動を経験。",
-    period: "elementary-junior",
   },
 ];
