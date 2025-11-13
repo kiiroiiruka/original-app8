@@ -7,7 +7,7 @@ export type Page = {
 };
 
 export const PAGES: Page[] = [
-  { id: "journey", title: "現代までの歩み", href: "/journey" },
+  { id: "journey", title: "自己PR", href: "/journey" },
   { id: "game", title: "ゲーム公開で得た経験", href: "/game" },
   { id: "music", title: "音楽制作による制作物", href: "/music" },
   { id: "hackathon", title: "ハッカソンで得た経験", href: "/hackathon" },
