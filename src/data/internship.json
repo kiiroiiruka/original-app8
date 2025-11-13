@@ -1,0 +1,14 @@
+{
+  "title": "インターンで得た経験",
+  "description": "インターンシップでの実務経験",
+  "content": "インターンでの経験をここに記入してください",
+  "internships": [
+    {
+      "company": "会社名",
+      "position": "職種",
+      "description": "業務内容",
+      "period": "期間",
+      "date": "2024年"
+    }
+  ]
+}

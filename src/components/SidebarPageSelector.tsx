@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 //サイドバーのページセレクター
 import { useEffect, useState } from "react";
 
@@ -12,6 +13,7 @@ type Page = {
 const STORAGE_KEY = "sidebar.visiblePages";
 
 export default function SidebarPageSelector({ pages }: { pages: Page[] }) {
+  const pathname = usePathname();
   const [visibleIds, setVisibleIds] = useState<string[]>(
     pages.map((p) => p.id),
   );
@@ -57,21 +59,29 @@ export default function SidebarPageSelector({ pages }: { pages: Page[] }) {
   };
 
   return (
-    <aside className="w-64 min-h-screen bg-white border-r border-black/5 dark:bg-[#0b0b0b] dark:border-white/5 p-4">
+    <aside className="fixed left-0 top-0 w-64 h-screen bg-white border-r border-black/5 dark:bg-[#0b0b0b] dark:border-white/5 p-4 overflow-y-auto">
       <nav className="mb-6">
         <ul className="flex flex-col gap-2">
           {pages
             .filter((p) => visibleIds.includes(p.id))
-            .map((p) => (
-              <li key={p.id}>
-                <Link
-                  href={p.href}
-                  className="block rounded px-3 py-2 text-sm font-medium text-zinc-800 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-white/2"
-                >
-                  {p.title}
-                </Link>
-              </li>
-            ))}
+            .map((p) => {
+              const isActive = pathname === p.href;
+              return (
+                <li key={p.id}>
+                  <Link
+                    href={p.href}
+                    className={`block rounded px-3 py-2 text-sm font-medium transition-colors ${
+                      isActive
+                        ? "bg-blue-100 text-blue-900 dark:bg-blue-900 dark:text-blue-100 font-semibold shadow-md"
+                        : "text-zinc-800 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-white/2"
+                    }`}
+                  >
+                    {p.title}
+                    {isActive && <span className="mr-2">*</span>}
+                  </Link>
+                </li>
+              );
+            })}
         </ul>
       </nav>
     </aside>

@@ -1,0 +1,14 @@
+{
+  "title": "ハッカソンで得た経験",
+  "description": "ハッカソンでのチーム開発経験",
+  "content": "ハッカソンでの学びをここに記入してください",
+  "hackathons": [
+    {
+      "name": "ハッカソン名",
+      "description": "プロジェクトの説明",
+      "role": "担当した役割",
+      "technology": ["React", "Node.js"],
+      "date": "2024年"
+    }
+  ]
+}
